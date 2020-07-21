@@ -2,12 +2,14 @@ import React, {useState} from 'react';
 import './App.css';
 import Homework from "./components/Homework";
 import {TodoList} from "./components/TodoList/TodoList";
+import {v1} from "uuid";
+import {Counter} from "./components/Counter/Counter";
+import {Common} from "./components/common/Common";
 
 export type TaskType = {
-    id: number
-    n: string
-    p: ValuesType
-    im: boolean
+    id: string
+    name: string
+    value: boolean
 }
 
 export type ValuesType = "important" | "noMatter" | "all";
@@ -15,16 +17,17 @@ export type ValuesType = "important" | "noMatter" | "all";
 function App() {
 
     let [tasks, setTasks] = useState<Array<TaskType>>([
-        {id: 1, n: "Job", p: "important", im: true},
-        {id: 2, n: "Anime", p: "noMatter", im: false},
-        {id: 3, n: "Games", p: "noMatter", im: false},
-        {id: 4, n: "React", p: "important", im: true},
-        {id: 5, n: "HTML", p: "important", im: true}
+        {id: v1(), name: "Family", value: true},
+        {id: v1(), name: "React", value: true},
+        {id: v1(), name: "Job", value: false},
+        {id: v1(), name: "Travels", value: true},
+        {id: v1(), name: "Games", value: false}
     ])
 
-    function removeTasks(taskId: number) {
+    function removeTasks(taskId: string) {
         setTasks(tasks.filter((t) => t.id !== taskId))
     }
+
 
     let [filter, setFilter] = useState<ValuesType>("all")
 
@@ -34,10 +37,10 @@ function App() {
 
     let tasksTodoList = tasks;
     if (filter === "important") {
-        tasksTodoList = tasks.filter(t => t.im)
+        tasksTodoList = tasks.filter(t => t.value)
     }
     if (filter === "noMatter") {
-        tasksTodoList = tasks.filter(t => !t.im)
+        tasksTodoList = tasks.filter(t => !t.value)
     }
 
         return (
@@ -45,7 +48,10 @@ function App() {
                 {/*<Homework name='Serg' message='How are you?'/>*/}
                 <TodoList tasks={tasksTodoList}
                           removeTasks={removeTasks}
-                          changeFilter={changeFilter}/>
+                          changeFilter={changeFilter}
+                          />
+                <Common/>
+                {/*<Counter/>*/}
             </div>
         );
 }

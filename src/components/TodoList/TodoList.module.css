@@ -1,0 +1,21 @@
+.input {
+    display: grid;
+    grid-template-columns: 190px 0px
+}
+
+.allNoMatterImportant {
+    display: grid;
+    grid-template-areas: "i n a";
+}
+
+.important {
+    grid-area: i
+}
+
+.noMatter {
+    grid-area: n
+}
+
+.all {
+    grid-area: a
+}
