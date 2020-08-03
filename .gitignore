@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 /.idea
-
+/src/codewars
+/src/components/Counter

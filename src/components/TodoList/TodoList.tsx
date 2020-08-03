@@ -12,11 +12,6 @@ type PropsType = {
     changeFilter: (newFilterValue: ValuesType) => void
 }
 
-type NewNameType = {
-    id: string
-    name: string
-}
-
 let array = [{id: v1(), name: "Andrew"},
     {id: v1(), name: "Sveta"}]
 

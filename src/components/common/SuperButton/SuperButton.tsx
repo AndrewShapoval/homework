@@ -1,5 +1,10 @@
 import React from "react";
 
+// type PropsType = {
+//     name: string
+//     onClick: ()=> void
+// }
+
 export function SuperButton(props: any) {
 
     const buttonStyle = {
