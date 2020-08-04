@@ -49,12 +49,6 @@ export function TodoList(props: PropsType) {
                             onKeyPress={onAlertTaskKeyPressed}/>
                 <div>
                     <SuperButton onClick={alertTask} name={"+"}/>
-                    {/*<input type="text"*/}
-                    {/*       value={taskName}*/}
-                    {/*       onChange={onTaskNameChanged}*/}
-                    {/*       onKeyPress={onAlertTaskKeyPressed}/>*/}
-                    {/*<button onClick={alertTask}> +</button>*/}
-
                 </div>
             </div>
 
@@ -62,11 +56,9 @@ export function TodoList(props: PropsType) {
                 {props.tasks.map((t) => {
                     return (
                         <li key={t.id}>
-                            {/*<input type="checkbox"/>*/}
-                                <SuperCheckBox/>
-                                <span>{t.name}</span>
-                                <SuperButton onClick={() => props.removeTasks(t.id)} name={"delete"}/>
-                            {/*<button onClick={() => props.removeTasks(t.id)}> x</button>*/}
+                            <SuperCheckBox/>
+                            <span>{t.name}</span>
+                            <SuperButton onClick={() => props.removeTasks(t.id)} name={"delete"}/>
                         </li>
                     )
                 })}
@@ -75,28 +67,19 @@ export function TodoList(props: PropsType) {
             <div className={t.allNoMatterImportant}>
                 <div className={t.important}>
                     <SuperButton name={"Important"} onClick={() => {
-                        props.changeFilter("important")}}/>
+                        props.changeFilter("important")
+                    }}/>
                 </div>
                 <div className={t.noMatter}>
                     <SuperButton name={"No Matter"} onClick={() => {
-                        props.changeFilter("noMatter")}}/>
+                        props.changeFilter("noMatter")
+                    }}/>
                 </div>
                 <div className={t.all}>
                     <SuperButton name={"All"} onClick={() => {
-                        props.changeFilter("all")}}/>
+                        props.changeFilter("all")
+                    }}/>
                 </div>
-                {/*<button onClick={() => {*/}
-                {/*    props.changeFilter("important")*/}
-                {/*}}> Important*/}
-                {/*</button>*/}
-                {/*<button onClick={() => {*/}
-                {/*    props.changeFilter("noMatter")*/}
-                {/*}}> No Matter*/}
-                {/*</button>*/}
-                {/*<button onClick={() => {*/}
-                {/*    props.changeFilter("all")*/}
-                {/*}}> All*/}
-                {/*</button>*/}
             </div>
         </div>
     )

@@ -12,6 +12,7 @@ export function SuperButton(props: any) {
         height: "30px",
         borderRadius: "10px",
         backgroundColor: "deepskyblue",
+        marginLeft: "10px"
     }
 
     return (

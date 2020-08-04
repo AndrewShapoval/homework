@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
-import Homework from "./components/Homework";
 import {TodoList} from "./components/TodoList/TodoList";
 import {v1} from "uuid";
 import {Counter} from "./components/Counter/Counter";
 import {Common} from "./components/common/Common";
+import {HashRouter, Route} from 'react-router-dom';
+import NavBar from "./components/Navbar/Navbar";
+import Homework from "./components/TaskOne/Homework";
 
 export type TaskType = {
     id: string
@@ -43,17 +45,27 @@ function App() {
         tasksTodoList = tasks.filter(t => !t.value)
     }
 
-        return (
+    return (
+        <HashRouter>
             <div className="App">
-                {/*<Homework name='Serg' message='How are you?'/>*/}
-                <TodoList tasks={tasksTodoList}
-                          removeTasks={removeTasks}
-                          changeFilter={changeFilter}
-                          />
-                <Common/>
+                <NavBar/>
+                <Route path='/PreJunior' render={() =>
+                    <Homework name='Serg' message='How are you?'/>
+                }/>
+                <Route path='/PreJunior' render={() =>
+                    <TodoList tasks={tasksTodoList}
+                              removeTasks={removeTasks}
+                              changeFilter={changeFilter}/>
+                }/>
+                <Route path='/PreJunior' render={() =>
+                    <Common/>
+                }/>
+                <Route path='/Junior' render={() => <div>Junior</div>}/>
+                <Route path='/Junior+' render={() => <div>Junior+</div>}/>
                 {/*<Counter/>*/}
             </div>
-        );
+        </HashRouter>
+    );
 }
 
 export default App;
