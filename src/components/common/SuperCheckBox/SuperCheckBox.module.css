@@ -3,7 +3,7 @@
 }
 
 .checkbox {
-    display: none
+    display: none;
 }
 
 .fake {
@@ -35,4 +35,5 @@
 
 .text {
     position: relative;
+    margin: 3px
 }
