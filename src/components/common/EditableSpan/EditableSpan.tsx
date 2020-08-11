@@ -1,7 +1,12 @@
-import React, {useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 import {SuperInput} from "../SuperInput/SuperInput";
 
-export function EditableSpan() {
+type PropsType = {
+    value?: string
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+}
+
+export function EditableSpan(props: PropsType) {
 
     const [editMode, setEditMode] = useState<boolean>(false)
 
@@ -15,7 +20,9 @@ export function EditableSpan() {
 
     return (
         editMode
-            ? <SuperInput onBlur={DeActivateEditMode}/>
+            ? <SuperInput onBlur={DeActivateEditMode}
+                          value={props.value}
+                          onChange={props.onChange}/>
             : <span onDoubleClick={activateEditMode}
             >EditableSpan</span>
     )

@@ -6,11 +6,11 @@ import {EditableSpan} from "./EditableSpan/EditableSpan";
 
 export function Common() {
     return (
-    <div>
-        <SuperInput/>
-        <SuperCheckBox/>
-        <SuperButton/>
-        <EditableSpan/>
-    </div>
+        <div>
+            <SuperInput/>
+            <SuperCheckBox/>
+            <SuperButton/>
+            <EditableSpan/>
+        </div>
     )
 }

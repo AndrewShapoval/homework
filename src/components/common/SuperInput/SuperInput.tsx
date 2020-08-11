@@ -13,6 +13,7 @@ export function SuperInput(props: PropsType) {
         borderRadius: "10px",
         backgroundColor: "LightCyan",
         padding: "6px 6px 6px 19px",
+        height: "20px",
         margin: "3px"
     }
 
@@ -21,8 +22,8 @@ export function SuperInput(props: PropsType) {
                    value={props.value}
                    onChange={props.onChange}
                    onKeyPress={props.onKeyPress}
-                   onBlur={props.onBlur}
-                   autoFocus={true}
+                   // onBlur={props.onBlur}
+                   // autoFocus={true}
             />
     )
 

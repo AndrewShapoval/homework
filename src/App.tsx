@@ -7,6 +7,7 @@ import {Common} from "./components/common/Common";
 import {HashRouter, Route} from 'react-router-dom';
 import NavBar from "./components/Navbar/Navbar";
 import Homework from "./components/TaskOne/Homework";
+import {MyLocalStorage} from "./components/MyLocalStorage/MyLocalStorage";
 
 export type TaskType = {
     id: string
@@ -60,7 +61,7 @@ function App() {
                 <Route path='/PreJunior' render={() =>
                     <Common/>
                 }/>
-                <Route path='/Junior' render={() => <div>Junior</div>}/>
+                <Route path='/Junior' render={() => <MyLocalStorage/>}/>
                 <Route path='/Junior+' render={() => <div>Junior+</div>}/>
                 {/*<Counter/>*/}
             </div>
