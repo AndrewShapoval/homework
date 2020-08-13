@@ -8,6 +8,7 @@ import {HashRouter, Route} from 'react-router-dom';
 import NavBar from "./components/Navbar/Navbar";
 import Homework from "./components/TaskOne/Homework";
 import {MyLocalStorage} from "./components/MyLocalStorage/MyLocalStorage";
+import {Select} from "./components/Select/Select";
 
 export type TaskType = {
     id: string
@@ -46,6 +47,8 @@ function App() {
         tasksTodoList = tasks.filter(t => !t.value)
     }
 
+    let selectItems = ["Moscow", "Kiev", "Minsk"]
+
     return (
         <HashRouter>
             <div className="App">
@@ -62,6 +65,7 @@ function App() {
                     <Common/>
                 }/>
                 <Route path='/Junior' render={() => <MyLocalStorage/>}/>
+                {/*<Route path='/Junior' render={() => <Select value={selectItems}/>}/>*/}
                 <Route path='/Junior+' render={() => <div>Junior+</div>}/>
                 {/*<Counter/>*/}
             </div>

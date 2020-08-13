@@ -22,7 +22,6 @@ export function MyLocalStorage() {
     // saveState<StateType>("test", {x: "A", y: 1});
 // сохраняем объект типа StateType в ячейке "test"
 //     const state: StateType = restoreState<StateType>("test", {x: "", y: 0})
-
     let [value, setValue] = useState<string>("")
 
     function onChangeValue(e: ChangeEvent<HTMLInputElement>) {
@@ -38,8 +37,6 @@ export function MyLocalStorage() {
         const stateFromLocalStorage = restoreState("test",{x:""})
         setValue(stateFromLocalStorage.x)
     }
-
-
 
     return (
         <div>

@@ -23,7 +23,7 @@ export function SuperInput(props: PropsType) {
                    onChange={props.onChange}
                    onKeyPress={props.onKeyPress}
                    // onBlur={props.onBlur}
-                   // autoFocus={true}
+                   autoFocus={true}
             />
     )
 
