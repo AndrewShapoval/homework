@@ -1,0 +1,23 @@
+.wrapper {
+    position: relative;
+    border: 1px black solid;
+    height: 20px;
+}
+.item {
+
+
+}
+
+.items {
+    position: absolute;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.tittle {
+}
+
+.item.selected {
+    background-color: blue;
+    color: white;
+}

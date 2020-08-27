@@ -8,7 +8,8 @@ import {HashRouter, Route} from 'react-router-dom';
 import NavBar from "./components/Navbar/Navbar";
 import Homework from "./components/TaskOne/Homework";
 import {MyLocalStorage} from "./components/MyLocalStorage/MyLocalStorage";
-import {Select} from "./components/Select/Select";
+import {Select} from "./components/common/Select/Select";
+import {Radio} from "./components/common/Radio/Radio";
 
 export type TaskType = {
     id: string
@@ -47,7 +48,34 @@ function App() {
         tasksTodoList = tasks.filter(t => !t.value)
     }
 
-    let selectItems = ["Moscow", "Kiev", "Minsk"]
+    //Select
+
+    let selectItems = [
+        {value: 1, tittle: "Moscow"},
+        {value: 2, tittle: "Kiev"},
+        {value: 3, tittle: "Minsk"}
+    ]
+
+    let [selectValue, setSelectValue] = useState(1)
+
+    const selectValueOnChange = (value: number) => {
+        setSelectValue(value)
+    }
+
+    //Radio
+
+    let array = [
+        {id: 1, tittle: "Berlin"},
+        {id: 2, tittle: "Madrid"},
+        {id: 3, tittle: "London"},
+        {id: 4, tittle: "Istanbul"},
+    ]
+
+    let [radioValue, setRadioValue] = useState(1)
+
+    function onChangeValueRadio(id: number) {
+        setRadioValue(id)
+    }
 
     return (
         <HashRouter>
@@ -65,7 +93,13 @@ function App() {
                     <Common/>
                 }/>
                 <Route path='/Junior' render={() => <MyLocalStorage/>}/>
-                {/*<Route path='/Junior' render={() => <Select value={selectItems}/>}/>*/}
+                <Route path='/Junior' render={() => <Select onChange={selectValueOnChange}
+                                                            value={selectValue}
+                                                            items={selectItems}/>}/>
+                <Route path='/Junior' render={() => <Radio name={"city"}
+                                                           onChange={onChangeValueRadio}
+                                                           value={radioValue}
+                                                           array={array}/>}/>
                 <Route path='/Junior+' render={() => <div>Junior+</div>}/>
                 {/*<Counter/>*/}
             </div>

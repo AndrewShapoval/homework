@@ -40,7 +40,7 @@ export function MyLocalStorage() {
 
     return (
         <div>
-        <EditableSpan value={value} onChange={onChangeValue}/>
+        <EditableSpan value={value} onChange={onChangeValue} title="Editable Span"/>
         <SuperButton name={"Save"} onClick={saveStateHandler}/>
         <SuperButton name={"Restore"} onClick={restoreStateHandler}/>
         </div>

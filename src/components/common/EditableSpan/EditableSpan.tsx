@@ -4,6 +4,7 @@ import {SuperInput} from "../SuperInput/SuperInput";
 type PropsType = {
     value?: string
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+    title?: string
 }
 
 export function EditableSpan(props: PropsType) {
@@ -24,6 +25,6 @@ export function EditableSpan(props: PropsType) {
                           value={props.value}
                           onChange={props.onChange}/>
             : <span onDoubleClick={activateEditMode}
-            >EditableSpan</span>
+            >{props.title}</span>
     )
 }
