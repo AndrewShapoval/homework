@@ -10,6 +10,7 @@ import Homework from "./components/TaskOne/Homework";
 import {MyLocalStorage} from "./components/MyLocalStorage/MyLocalStorage";
 import {Select} from "./components/common/Select/Select";
 import {Radio} from "./components/common/Radio/Radio";
+import {Hw8} from "./components/Hw8/Hw8";
 
 export type TaskType = {
     id: string
@@ -100,6 +101,7 @@ function App() {
                                                            onChange={onChangeValueRadio}
                                                            value={radioValue}
                                                            array={array}/>}/>
+                <Route path='/Junior' render={() => <Hw8/>}></Route>
                 <Route path='/Junior+' render={() => <div>Junior+</div>}/>
                 {/*<Counter/>*/}
             </div>
